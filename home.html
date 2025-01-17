@@ -84,6 +84,21 @@
             width: 50%;
             opacity: 0.8;
         }
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
         @media (min-width: 768px) {
             h1 {
                 font-size: 42px;
@@ -120,6 +135,8 @@
         <img src="utuadourbetransparent.png" alt="Imagen decorativa" class="bottom-image">
     </div>
 
+    <button class="back-button" onclick="goBack()">Back</button>
+
     <script>
         function navigateToMap(option) {
             if(option === 'interactive-map') {
@@ -127,6 +144,10 @@
             } else if(option === 'indexriointro') {
                 window.location.href = 'indexriointro.html';
             }
+        }
+        
+        function goBack() {
+            window.history.back();
         }
     </script>
 </body>
