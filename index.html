@@ -11,22 +11,19 @@
             margin: 0;
             font-family: 'Titan One', sans-serif;
         }
-        .bg {
-            height: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-image: url('mural.jpeg'); /* Background image */
-            position: relative;
-        }
-        .bg::before {
-            content: '';
-            position: absolute;
+        .bg-video {
+            position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7); /* Darker overlay for better contrast */
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .bg-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .container {
             text-align: center;
@@ -39,7 +36,6 @@
             box-sizing: border-box;
             width: 100%;
             z-index: 1;
-            padding-bottom: 200px;
         }
         h1 {
             font-size: 36px;
@@ -59,9 +55,9 @@
         }
         .button {
             display: inline-block;
-            width: 150px; /* Fixed width */
-            height: 50px; /* Fixed height */
-            line-height: 50px; /* Vertically center text */
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
             background: linear-gradient(0deg, #08BEF8, #08BEF8), #FFB001;
             box-shadow: 0px 4px 20px rgba(255, 165, 2, 0.5);
             border-radius: 20px;
@@ -100,24 +96,27 @@
         @media (min-width: 1024px) {
             .container {
                 top: 40%;
-                padding-bottom: 250px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="bg">
-        <div class="container">
-            <h1>Nuestro Paseo</h1>
-            <p>Explora Caguas y Río Piedras en nuestro mapa interactivo.</p>
-            <div class="button-container">
-                <!-- Updated links -->
-                <a class="button" href="https://cartografias177.github.io/Caguasmap/">Caguas</a>
-                <a class="button" href="https://cartografias177.github.io/Riopiedrasmap/">Río Piedras</a>
-                <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScJGsjiBNLiHaDAZN8tPod1N3jGFa9T3VE9x5GEOomiO7ooyQ/viewform?usp=pp_url" target="_blank">Cuestionario</a>
-            </div>
-        </div>
-        <img src="icono.png" alt="Imagen decorativa" class="bottom-image">
+    <div class="bg-video">
+        <!-- Video Background -->
+        <video autoplay muted loop>
+            <source src="compressed_video.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
     </div>
+    <div class="container">
+        <h1>Nuestro Paseo</h1>
+        <p>Explora Caguas y Río Piedras en nuestro mapa interactivo.</p>
+        <div class="button-container">
+            <a class="button" href="https://cartografias177.github.io/Caguasmap/">Caguas</a>
+            <a class="button" href="https://cartografias177.github.io/Riopiedrasmap/">Río Piedras</a>
+            <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScJGsjiBNLiHaDAZN8tPod1N3jGFa9T3VE9x5GEOomiO7ooyQ/viewform?usp=pp_url" target="_blank">Cuestionario</a>
+        </div>
+    </div>
+    <img src="icono.png" alt="Imagen decorativa" class="bottom-image">
 </body>
 </html>
