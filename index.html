@@ -12,30 +12,23 @@
             font-family: 'Titan One', sans-serif;
             overflow: hidden;
         }
-        .carousel {
+        .video-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
             z-index: -1;
         }
-        .carousel img {
+        .video-bg video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            position: absolute;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .carousel img.active {
-            opacity: 1;
         }
         .container {
             text-align: center;
             position: absolute;
-            top: 50%;
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: #fff;
@@ -75,6 +68,23 @@
         .button:hover {
             background: linear-gradient(0deg, #06A5D0, #06A5D0), #FFA500;
         }
+        .images-section {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+        .images-section img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
         @media (min-width: 768px) {
             h1 {
                 font-size: 42px;
@@ -85,20 +95,19 @@
             .button {
                 font-size: 18px;
             }
+            .images-section img {
+                width: 200px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Carrusel de imágenes -->
-    <div class="carousel">
-        <img src="FLORES_2.jpg" class="active" alt="Flores 2">
-        <img src="FLORES_OJOS.jpg" alt="Flores Ojos">
-        <img src="IGUANA.jpg" alt="Iguana">
-        <img src="RioPiedras_Murales (1).jpeg" alt="Mural 1">
-        <img src="RioPiedras_Murales (2).jpeg" alt="Mural 2">
-        <img src="RioPiedras_Murales (3).jpeg" alt="Mural 3">
-        <img src="RioPiedras_Murales (4).jpeg" alt="Mural 4">
-        <img src="RioPiedras_Murales (5).jpeg" alt="Mural 5">
+    <!-- Video de fondo -->
+    <div class="video-bg">
+        <video autoplay muted loop>
+            <source src="compressed_video.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
     </div>
 
     <!-- Contenido principal -->
@@ -112,19 +121,12 @@
         </div>
     </div>
 
-    <script>
-        // Lógica del carrusel
-        const images = document.querySelectorAll('.carousel img');
-        let currentIndex = 0;
-
-        function showNextImage() {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
-        }
-
-        setInterval(showNextImage, 5000); // Cambiar imagen cada 5 segundos
-    </script>
+    <!-- Sección de imágenes -->
+    <div class="images-section">
+        <img src="FLORES_2.jpg" alt="Flores 2">
+        <img src="FLORES_OJOS.jpg" alt="Flores Ojos">
+        <img src="IGUANA.jpg" alt="Iguana">
+    </div>
 </body>
 </html>
 
