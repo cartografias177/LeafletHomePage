@@ -31,20 +31,23 @@
             top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: #b6ff9b; /* Verde claro */
             z-index: 1;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para resaltar texto */
         }
         h1 {
-            font-size: 36px;
+            font-size: 64px; /* Tamaño grande */
             margin: 0 0 20px 0;
-            color: #b6ff9b; /* Verde claro */
+            background: linear-gradient(90deg, #b6ff9b, #ffffff); /* Degradado verde claro a blanco */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; /* Hace que solo el degradado sea visible */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para mejor visibilidad */
         }
         p {
-            font-size: 18px;
-            margin: 0 0 20px 0;
-            color: #b6ff9b; /* Verde claro */
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra adicional para mejorar visibilidad */
+            font-size: 28px; /* Tamaño grande */
+            margin: 0 0 30px 0;
+            background: linear-gradient(90deg, #b6ff9b, #ffffff); /* Degradado verde claro a blanco */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra para visibilidad */
         }
         .button-container {
             display: flex;
@@ -54,16 +57,16 @@
         }
         .button {
             display: inline-block;
-            width: 150px;
-            height: 50px;
-            line-height: 50px;
+            width: 180px; /* Más ancho */
+            height: 60px; /* Más alto */
+            line-height: 60px; /* Centrado verticalmente */
             background: linear-gradient(0deg, #08BEF8, #08BEF8), #FFB001;
             box-shadow: 0px 4px 20px rgba(255, 165, 2, 0.5);
             border-radius: 20px;
             color: #fff;
             text-align: center;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 20px; /* Tamaño grande */
             font-family: 'Titan One', sans-serif;
             cursor: pointer;
             transition: background 0.3s ease;
@@ -90,13 +93,16 @@
         }
         @media (min-width: 768px) {
             h1 {
-                font-size: 42px;
+                font-size: 72px; /* Tamaño mayor en pantallas grandes */
             }
             p {
-                font-size: 20px;
+                font-size: 32px;
             }
             .button {
-                font-size: 18px;
+                font-size: 22px;
+                width: 200px;
+                height: 70px;
+                line-height: 70px;
             }
             .images-section img {
                 width: 200px;
