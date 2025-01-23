@@ -10,21 +10,27 @@
             height: 100%;
             margin: 0;
             font-family: 'Titan One', sans-serif;
-            overflow: hidden; /* Evitar desplazamiento con el video */
+            overflow: hidden;
         }
-        .video-bg {
+        .carousel {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
             overflow: hidden;
+            z-index: -1;
         }
-        .video-bg video {
+        .carousel img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .carousel img.active {
+            opacity: 1;
         }
         .container {
             text-align: center;
@@ -83,12 +89,16 @@
     </style>
 </head>
 <body>
-    <!-- Video de fondo -->
-    <div class="video-bg">
-        <video autoplay muted loop>
-            <source src="compressed_video.mp4" type="video/mp4">
-            Tu navegador no soporta el elemento de video.
-        </video>
+    <!-- Carrusel de imágenes -->
+    <div class="carousel">
+        <img src="FLORES_2.jpg" class="active" alt="Flores 2">
+        <img src="FLORES_OJOS.jpg" alt="Flores Ojos">
+        <img src="IGUANA.jpg" alt="Iguana">
+        <img src="RioPiedras_Murales (1).jpeg" alt="Mural 1">
+        <img src="RioPiedras_Murales (2).jpeg" alt="Mural 2">
+        <img src="RioPiedras_Murales (3).jpeg" alt="Mural 3">
+        <img src="RioPiedras_Murales (4).jpeg" alt="Mural 4">
+        <img src="RioPiedras_Murales (5).jpeg" alt="Mural 5">
     </div>
 
     <!-- Contenido principal -->
@@ -101,5 +111,20 @@
             <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScJGsjiBNLiHaDAZN8tPod1N3jGFa9T3VE9x5GEOomiO7ooyQ/viewform?usp=pp_url" target="_blank">Cuestionario</a>
         </div>
     </div>
+
+    <script>
+        // Lógica del carrusel
+        const images = document.querySelectorAll('.carousel img');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 5000); // Cambiar imagen cada 5 segundos
+    </script>
 </body>
 </html>
+
