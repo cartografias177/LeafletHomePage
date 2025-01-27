@@ -86,10 +86,10 @@
     </style>
 </head>
 <body>
-    <!-- Videos de fondo alternados -->
+    <!-- Video de fondo único -->
     <div class="video-bg">
         <video id="background-video" autoplay muted loop>
-            <source src="VideoCaguas.mp4" type="video/mp4">
+            <source src="VideoCaguasRioPiedras.mp4" type="video/mp4">
             Tu navegador no soporta el elemento de video.
         </video>
     </div>
@@ -106,17 +106,6 @@
     </div>
 
     <script>
-        const videos = ["VideoCaguas.mp4", "VideoRioPiedras.mp4"];
-        let currentVideoIndex = 0;
-
-        const videoElement = document.getElementById('background-video');
-
-        videoElement.addEventListener('ended', () => {
-            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
-            videoElement.src = videos[currentVideoIndex];
-            videoElement.play();
-        });
-
         function navigateToMap(option) {
             if(option === 'interactive-map') {
                 window.location.href = 'map.html';
