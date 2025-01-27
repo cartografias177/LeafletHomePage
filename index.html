@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido a Nuestro Mapa Interactivo</title>
-    <link href="https://fonts.google.com/share?selection.family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000">
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
     <style>
         body, html {
             height: 100%;
             margin: 0;
             font-family: 'Titan One', sans-serif;
-            overflow: hidden;
         }
         .video-bg {
             position: fixed;
@@ -28,23 +27,24 @@
         .container {
             text-align: center;
             position: absolute;
-            top: 40%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: #b6ff9b; /* Verde claro */
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            width: 100%;
             z-index: 1;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para resaltar texto */
         }
         h1 {
-            font-size: 64px; /* Tamaño grande */
+            font-size: 36px;
             margin: 0 0 20px 0;
-            color: #b6ff9b; /* Verde claro */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
         p {
-            font-size: 28px; /* Tamaño grande */
-            margin: 0 0 30px 0;
-            color: #b6ff9b; /* Verde claro */
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra adicional para visibilidad */
+            font-size: 18px;
+            margin: 0 0 20px 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
         .button-container {
             display: flex;
@@ -53,65 +53,43 @@
             flex-wrap: wrap;
         }
         .button {
-            display: inline-block;
-            width: 180px; /* Más ancho */
-            height: 60px; /* Más alto */
-            line-height: 60px; /* Centrado verticalmente */
+            position: relative;
+            width: calc(100% - 40px);
+            max-width: 300px;
+            height: 66px;
             background: linear-gradient(0deg, #08BEF8, #08BEF8), #FFB001;
             box-shadow: 0px 4px 20px rgba(255, 165, 2, 0.5);
             border-radius: 20px;
             color: #fff;
-            text-align: center;
-            text-decoration: none;
-            font-size: 20px; /* Tamaño grande */
-            font-family: 'Titan One', sans-serif;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 16px;
             cursor: pointer;
-            transition: background 0.3s ease;
+            font-family: 'Titan One', sans-serif;
         }
         .button:hover {
             background: linear-gradient(0deg, #06A5D0, #06A5D0), #FFA500;
         }
-        .images-section {
-            position: absolute;
-            bottom: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            align-items: center;
-            z-index: 1;
-        }
-        .images-section img {
-            width: 150px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
         @media (min-width: 768px) {
             h1 {
-                font-size: 72px; /* Tamaño mayor en pantallas grandes */
+                font-size: 42px;
             }
             p {
-                font-size: 32px;
+                font-size: 20px;
             }
             .button {
-                font-size: 22px;
-                width: 200px;
-                height: 70px;
-                line-height: 70px;
-            }
-            .images-section img {
-                width: 200px;
+                font-size: 18px;
+                width: auto;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Video de fondo -->
+    <!-- Videos de fondo alternados -->
     <div class="video-bg">
-        <video autoplay muted loop>
-            <source src="compressed_video.mp4" type="video/mp4">
+        <video id="background-video" autoplay muted loop>
+            <source src="VideoCaguas.mp4" type="video/mp4">
             Tu navegador no soporta el elemento de video.
         </video>
     </div>
@@ -121,18 +99,31 @@
         <h1>Nuestro Paseo</h1>
         <p>Explora Caguas y Río Piedras en nuestro mapa interactivo.</p>
         <div class="button-container">
-            <a class="button" href="https://cartografias177.github.io/Caguasmap/">Caguas</a>
-            <a class="button" href="https://cartografias177.github.io/Riopiedrasmap/">Río Piedras</a>
-            <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScJGsjiBNLiHaDAZN8tPod1N3jGFa9T3VE9x5GEOomiO7ooyQ/viewform?usp=pp_url" target="_blank">¡Añade un lugar!</a>
+            <button class="button" onclick="navigateToMap('interactive-map')">Caguas</button>
+            <button class="button" onclick="navigateToMap('indexriointro')">Río Piedras</button>
         </div>
     </div>
 
-    <!-- Sección de imágenes -->
-    <div class="images-section">
-        <img src="FLORES_2.jpg" alt="Flores 2">
-        <img src="FLORES_OJOS.jpg" alt="Flores Ojos">
-        <img src="IGUANA.jpg" alt="Iguana">
-    </div>
+    <script>
+        const videos = ["VideoCaguas.mp4", "VideoRioPiedras.mp4"];
+        let currentVideoIndex = 0;
+
+        const videoElement = document.getElementById('background-video');
+
+        videoElement.addEventListener('ended', () => {
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            videoElement.src = videos[currentVideoIndex];
+            videoElement.play();
+        });
+
+        function navigateToMap(option) {
+            if(option === 'interactive-map') {
+                window.location.href = 'map.html';
+            } else if(option === 'indexriointro') {
+                window.location.href = 'indexriointro.html';
+            }
+        }
+    </script>
 </body>
 </html>
 
