@@ -62,10 +62,10 @@
             width: calc(100% - 40px);
             max-width: 300px;
             height: 66px;
-            background: rgba(34, 139, 34, 0.95); /* Fondo verde */
+            background: rgba(144, 238, 144, 0.95); /* Verde claro */
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Ajuste de sombra */
             border-radius: 20px;
-            color: #fff;
+            color: #000;
             border: none;
             padding: 15px 30px;
             margin: 10px;
@@ -75,13 +75,13 @@
             transition: background 0.3s ease;
         }
         .button:hover {
-            background: rgba(34, 139, 34, 1); /* Verde más oscuro al pasar el cursor */
+            background: rgba(144, 238, 144, 1); /* Verde más intenso al pasar el cursor */
         }
         .button-small {
-            max-width: 200px;
-            height: 50px;
-            line-height: 50px;
-            font-size: 14px;
+            max-width: 150px; /* Más pequeño */
+            height: 40px; /* Más pequeño */
+            line-height: 40px;
+            font-size: 12px; /* Tamaño de fuente reducido */
         }
         @media (min-width: 768px) {
             h1 {
@@ -114,7 +114,7 @@
         </div>
         <div class="button-container">
             <button class="button" onclick="navigateToMap('interactive-map')">Caguas</button>
-            <a class="button" href="https://cartografias177.github.io/Riopiedrasmap/">Río Piedras</a>
+            <a class="button button-small" href="https://cartografias177.github.io/Riopiedrasmap/">Río Piedras</a>
             <a class="button button-small" href="https://docs.google.com/forms/d/e/1FAIpQLScJGsjiBNLiHaDAZN8tPod1N3jGFa9T3VE9x5GEOomiO7ooyQ/viewform?usp=pp_url" target="_blank">¡Añade un lugar!</a>
         </div>
     </div>
