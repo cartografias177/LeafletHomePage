@@ -24,6 +24,13 @@
             height: 100%;
             object-fit: cover;
         }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            max-width: 80px; /* Tamaño más pequeño */
+            z-index: 2;
+        }
         .container {
             text-align: center;
             position: absolute;
@@ -105,10 +112,11 @@
         </video>
     </div>
 
+    <!-- Logo en la parte superior izquierda -->
+    <img src="logonuestropaseo.png" alt="Logo Nuestro Paseo" class="logo">
+
     <div class="container">
         <div class="highlight-box">
-            <!-- Imagen añadida aquí -->
-            <img src="logonuestropaseo.png" alt="Logo Nuestro Paseo" style="max-width: 200px; margin-bottom: 20px;">
             <h1>Nuestro Paseo</h1>
             <p>Explora Caguas y Río Piedras en nuestro mapa interactivo.</p>
         </div>
