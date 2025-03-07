@@ -32,19 +32,6 @@
             position: relative;
             z-index: 1;
         }
-        .map-invitation-container {
-            background-color: rgba(255, 182, 193, 0.6);
-            padding: 10px;
-            border-radius: 10px;
-            display: inline-block;
-            margin-top: 20px;
-            position: relative;
-        }
-        .map-invitation {
-            font-size: 14px;
-            font-weight: bold;
-            color: #000;
-        }
         .highlight-box {
             background-color: rgba(255, 255, 255, 0.8);
             padding: 15px;
@@ -97,6 +84,24 @@
         .button:hover {
             background: rgba(144, 238, 144, 1);
         }
+        .tooltip {
+            visibility: hidden;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            position: absolute;
+            z-index: 10;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 250px;
+            font-size: 14px;
+        }
+        .button:hover .tooltip {
+            visibility: visible;
+        }
     </style>
 </head>
 <body>
@@ -114,14 +119,12 @@
                 <p>Los paseos en los cascos urbanos fomentan la economía local, revitalizan el espacio público y crean sentido de comunidad. Nuestro Paseo es una invitación a redescubrir el paseo comercial boricua.</p>
             </div>
         </div>
-        <div class="map-invitation-container">
-            <p class="map-invitation">Explora los mapas interactivos y conoce más sobre Caguas y Río Piedras.</p>
-        </div>
         <div class="button-container">
             <a class="button" href="https://cartografias177.github.io/Caguasmap/" target="_blank">Caguas</a>
             <a class="button" href="https://cartografias177.github.io/Riopiedrasmap/" target="_blank">Río Piedras</a>
             <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScJGsjiBNLiHaDAZN8tPod1N3jGFa9T3VE9x5GEOomiO7ooyQ/viewform?usp=pp_url" target="_blank">
                 Quiero ser parte de Nuestro Paseo
+                <span class="tooltip">¿Eres un negocio, organización o iniciativa que promueve el desarrollo sostenible comunitario en Caguas o Río Piedras? Compártenos tu info aquí para que seas parte de esta iniciativa.</span>
             </a>
         </div>
     </div>
