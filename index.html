@@ -25,11 +25,11 @@
             object-fit: cover;
         }
         .logo {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            max-width: 180px;
+            display: block;
+            margin: 0 auto 10px auto;
+            max-width: 200px; /* Aumentado el tamaño del logo */
             z-index: 2;
+            position: relative;
         }
         .container {
             text-align: center;
@@ -44,14 +44,13 @@
         }
         .highlight-box {
             background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px;
+            padding: 20px;
             border-radius: 10px;
             display: inline-block;
+            max-width: 400px;
         }
         h1 {
-            font-size: 30px;
-            margin: 0 0 10px 0;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            display: none; /* Se oculta el título dentro del cuadro */
         }
         p {
             font-size: 16px;
@@ -107,14 +106,6 @@
         .button:hover .tooltip {
             visibility: visible;
         }
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 36px;
-            }
-            p {
-                font-size: 18px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -125,13 +116,13 @@
         </video>
     </div>
 
-    <!-- Logo actualizado -->
+    <!-- Logo centrado encima del cuadro blanco -->
     <img src="logofinal.png" alt="Logo Nuestro Paseo" class="logo">
 
     <div class="container">
         <div class="highlight-box">
-            <h1>Nuestro Paseo</h1>
-            <p>Te invitamos a redescubrir el paseo comercial boricua.</p>
+            <p>Los paseos en los cascos urbanos fomentan la economía local, revitalizan el espacio público y crean sentido de comunidad.</p>
+            <p>Nuestro Paseo es una invitación a redescubrir el paseo comercial boricua.</p>
         </div>
         <div class="button-container">
             <a class="button" href="https://cartografias177.github.io/Caguasmap/" target="_blank">Caguas</a>
