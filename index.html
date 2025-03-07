@@ -26,24 +26,32 @@
         }
         .logo {
             display: block;
-            margin: 0 auto 20px auto;
+            margin: 20px auto;
             max-width: 300px;
             z-index: 2;
             position: relative;
         }
         .container {
             text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            width: 100%;
             padding: 20px;
             box-sizing: border-box;
-            width: 100%;
+            position: relative;
             z-index: 1;
         }
+        .highlight-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            max-width: 400px;
+            margin: 0 auto 20px auto;
+        }
+        .highlight-box p {
+            font-size: 14px;
+        }
         .map-invitation-container {
-            background-color: rgba(255, 182, 193, 0.6); /* Rosa transparente */
+            background-color: rgba(255, 182, 193, 0.6);
             padding: 15px;
             border-radius: 10px;
             display: inline-block;
@@ -53,17 +61,6 @@
             font-size: 18px;
             font-weight: bold;
             color: #000;
-        }
-        .highlight-box {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 15px;
-            border-radius: 10px;
-            display: inline-block;
-            max-width: 400px;
-            margin-bottom: 10px;
-        }
-        .highlight-box p {
-            font-size: 14px; /* Texto más pequeño dentro del cuadro blanco */
         }
         .button-container {
             display: flex;
