@@ -102,6 +102,25 @@
         .button:hover .tooltip {
             visibility: visible;
         }
+        .animated-button {
+            background-color: #ff69b4;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .animated-button:hover {
+            background-color: #ff1493;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -119,6 +138,7 @@
                 <p>Los paseos en los cascos urbanos fomentan la economía local, revitalizan el espacio público y crean sentido de comunidad. Nuestro Paseo es una invitación a redescubrir el paseo comercial boricua.</p>
             </div>
         </div>
+        <a class="animated-button" href="#">Explora los mapas interactivos y conoce más sobre Caguas y Río Piedras</a>
         <div class="button-container">
             <a class="button" href="https://cartografias177.github.io/Caguasmap/" target="_blank">Caguas</a>
             <a class="button" href="https://cartografias177.github.io/Riopiedrasmap/" target="_blank">Río Piedras</a>
