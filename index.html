@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido a Nuestro Mapa Interactivo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Condensed&display=swap" rel="stylesheet">
     <style>
         body, html {
             height: 100%;
             margin: 0;
-            font-family: 'Titan One', sans-serif;
+            font-family: 'Helvetica Condensed', sans-serif;
         }
         .video-bg {
             position: fixed;
@@ -28,7 +28,7 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            max-width: 80px; /* Tamaño más pequeño */
+            max-width: 150px; /* Aumento del tamaño del logo */
             z-index: 2;
         }
         .container {
@@ -69,7 +69,7 @@
             width: calc(100% - 40px);
             max-width: 200px;
             height: 50px;
-            background: rgba(144, 238, 144, 0.95); /* Verde claro */
+            background: rgba(144, 238, 144, 0.95);
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
             border-radius: 20px;
             color: #000;
@@ -78,7 +78,7 @@
             margin: 10px;
             font-size: 14px;
             cursor: pointer;
-            font-family: 'Titan One', sans-serif;
+            font-family: 'Helvetica Condensed', sans-serif;
             transition: background 0.3s ease;
             text-align: center;
             text-decoration: none;
@@ -112,19 +112,27 @@
         </video>
     </div>
 
-    <!-- Logo en la parte superior izquierda -->
-    <img src="logonuestropaseo.png" alt="Logo Nuestro Paseo" class="logo">
+    <!-- Logo actualizado -->
+    <img src="logofinal.png" alt="Logo Nuestro Paseo" class="logo">
 
     <div class="container">
         <div class="highlight-box">
             <h1>Nuestro Paseo</h1>
-            <p>Explora Caguas y Río Piedras en nuestro mapa interactivo.</p>
+            <p>Te invitamos a redescubrir el paseo comercial boricua.</p>
         </div>
         <div class="button-container">
             <a class="button button-small" href="https://cartografias177.github.io/Caguasmap/" target="_blank">Caguas</a>
             <a class="button button-small" href="https://cartografias177.github.io/Riopiedrasmap/" target="_blank">Río Piedras</a>
-            <a class="button button-small" href="https://docs.google.com/forms/d/e/1FAIpQLScJGsjiBNLiHaDAZN8tPod1N3jGFa9T3VE9x5GEOomiO7ooyQ/viewform?usp=pp_url" target="_blank">¡Añade un lugar!</a>
+        </div>
+        <div class="highlight-box">
+            <p>¿Eres un negocio, organización o iniciativa que impulsa el desarrollo sostenible comunitario en Caguas o Río Piedras? Compártenos tu información y forma parte de esta iniciativa.</p>
+            <a class="button button-small" href="https://docs.google.com/forms/d/e/1FAIpQLScJGsjiBNLiHaDAZN8tPod1N3jGFa9T3VE9x5GEOomiO7ooyQ/viewform?usp=pp_url" target="_blank">Quiero ser parte de Nuestro Paseo</a>
         </div>
     </div>
+    
+    <footer style="position: absolute; bottom: 20px; width: 100%; text-align: center; font-size: 14px;">
+        <p>Para más información, escríbenos a <a href="mailto:cartografias@lamarana.org">cartografias@lamarana.org</a>.</p>
+    </footer>
 </body>
 </html>
+
