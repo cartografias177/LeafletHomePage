@@ -24,13 +24,6 @@
             height: 100%;
             object-fit: cover;
         }
-        .logo {
-            display: block;
-            margin: 20px auto 10px auto;
-            max-width: 250px; /* Reducido para un mejor ajuste */
-            z-index: 2;
-            position: relative;
-        }
         .container {
             text-align: center;
             width: 100%;
@@ -39,32 +32,38 @@
             position: relative;
             z-index: 1;
         }
+        .map-invitation-container {
+            background-color: rgba(255, 182, 193, 0.6);
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            position: relative;
+        }
+        .map-invitation {
+            font-size: 14px;
+            font-weight: bold;
+            color: #000;
+        }
         .highlight-box {
             background-color: rgba(255, 255, 255, 0.8);
             padding: 15px;
             border-radius: 10px;
             display: inline-block;
             max-width: 400px;
-            margin: 0 auto 20px auto;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            margin: 60px auto 20px auto;
+            position: relative;
+            z-index: 2;
         }
         .highlight-box p {
             font-size: 14px;
         }
-        .map-invitation-container {
-            background-color: rgba(255, 182, 193, 0.6);
-            padding: 10px;
-            border-radius: 10px;
-            display: inline-block;
-            margin-top: 80px;
-        }
-        .map-invitation {
-            font-size: 14px; /* Reducido para una mejor presentación */
-            font-weight: bold;
-            color: #000;
+        .logo {
+            display: block;
+            margin: 0 auto -30px auto;
+            max-width: 250px;
+            z-index: 3;
+            position: relative;
         }
         .button-container {
             display: flex;
@@ -109,11 +108,11 @@
     </div>
 
     <div class="container">
-        <!-- Logo centrado encima del cuadro blanco -->
-        <img src="logofinal.png" alt="Logo Nuestro Paseo" class="logo">
-        
-        <div class="highlight-box">
-            <p>Los paseos en los cascos urbanos fomentan la economía local, revitalizan el espacio público y crean sentido de comunidad. Nuestro Paseo es una invitación a redescubrir el paseo comercial boricua.</p>
+        <div class="map-invitation-container">
+            <img src="logofinal.png" alt="Logo Nuestro Paseo" class="logo">
+            <div class="highlight-box">
+                <p>Los paseos en los cascos urbanos fomentan la economía local, revitalizan el espacio público y crean sentido de comunidad. Nuestro Paseo es una invitación a redescubrir el paseo comercial boricua.</p>
+            </div>
         </div>
         <div class="map-invitation-container">
             <p class="map-invitation">Explora los mapas interactivos y conoce más sobre Caguas y Río Piedras.</p>
