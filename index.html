@@ -28,7 +28,7 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            max-width: 150px; /* Aumento del tamaño del logo */
+            max-width: 150px;
             z-index: 2;
         }
         .container {
@@ -61,12 +61,12 @@
         .button-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 10px;
             flex-wrap: wrap;
         }
         .button {
             position: relative;
-            width: calc(100% - 40px);
+            width: auto;
             max-width: 200px;
             height: 50px;
             background: rgba(144, 238, 144, 0.95);
@@ -75,8 +75,8 @@
             color: #000;
             border: none;
             padding: 10px 20px;
-            margin: 10px;
-            font-size: 14px;
+            font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
             font-family: 'Helvetica Condensed', sans-serif;
             transition: background 0.3s ease;
@@ -88,11 +88,6 @@
         }
         .button:hover {
             background: rgba(144, 238, 144, 1);
-        }
-        .button-small {
-            max-width: 150px;
-            height: 50px;
-            font-size: 14px;
         }
         @media (min-width: 768px) {
             h1 {
@@ -121,11 +116,10 @@
             <p>Te invitamos a redescubrir el paseo comercial boricua.</p>
         </div>
         <div class="button-container">
-            <a class="button button-small" href="https://cartografias177.github.io/Caguasmap/" target="_blank">Caguas</a>
-            <a class="button button-small" href="https://cartografias177.github.io/Riopiedrasmap/" target="_blank">Río Piedras</a>
+            <a class="button" href="https://cartografias177.github.io/Caguasmap/" target="_blank">Caguas</a>
+            <a class="button" href="https://cartografias177.github.io/Riopiedrasmap/" target="_blank">Río Piedras</a>
+            <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScJGsjiBNLiHaDAZN8tPod1N3jGFa9T3VE9x5GEOomiO7ooyQ/viewform?usp=pp_url" target="_blank">Quiero ser parte de Nuestro Paseo</a>
         </div>
-        <p>¿Eres un negocio, organización o iniciativa que impulsa el desarrollo sostenible comunitario en Caguas o Río Piedras? Compártenos tu información y forma parte de esta iniciativa.</p>
-        <a class="button button-small" href="https://docs.google.com/forms/d/e/1FAIpQLScJGsjiBNLiHaDAZN8tPod1N3jGFa9T3VE9x5GEOomiO7ooyQ/viewform?usp=pp_url" target="_blank">Quiero ser parte de Nuestro Paseo</a>
     </div>
     
     <footer style="position: absolute; bottom: 20px; width: 100%; text-align: center; font-size: 14px;">
