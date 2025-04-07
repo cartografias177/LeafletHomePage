@@ -38,7 +38,7 @@
             border-radius: 10px;
             display: inline-block;
             max-width: 400px;
-            margin: 60px auto 20px auto;
+            margin: 20px auto;
             position: relative;
             z-index: 2;
         }
@@ -47,10 +47,29 @@
         }
         .logo {
             display: block;
-            margin: 0 auto -30px auto;
+            margin: 0 auto 20px auto;
             max-width: 250px;
             z-index: 3;
             position: relative;
+        }
+        .animated-button {
+            background-color: #ff69b4;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+        .animated-button:hover {
+            background-color: #ff1493;
+            transform: scale(1.1);
         }
         .button-container {
             display: flex;
@@ -102,25 +121,6 @@
         .button:hover .tooltip {
             visibility: visible;
         }
-        .animated-button {
-            background-color: #ff69b4;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            display: inline-block;
-            text-align: center;
-            text-decoration: none;
-            margin-top: 20px;
-        }
-        .animated-button:hover {
-            background-color: #ff1493;
-            transform: scale(1.1);
-        }
         .footer-highlight {
             background-color: rgba(255, 255, 255, 0.8);
             display: inline-block;
@@ -140,11 +140,11 @@
     <div class="container">
         <div class="map-invitation-container">
             <img src="Logo_Nuestro_Paseo.svg" alt="Logo Nuestro Paseo" class="logo">
+            <a class="animated-button" href="#">Explora los mapas interactivos y conoce más sobre Caguas y Río Piedras</a>
             <div class="highlight-box">
                 <p>Los paseos en los cascos urbanos fomentan la economía local, revitalizan el espacio público y crean sentido de comunidad. Nuestro Paseo es una invitación a redescubrir el paseo comercial boricua.</p>
             </div>
         </div>
-        <a class="animated-button" href="#">Explora los mapas interactivos y conoce más sobre Caguas y Río Piedras</a>
         <div class="button-container">
             <a class="button" href="https://cartografias177.github.io/Caguasmap/" target="_blank">Caguas</a>
             <a class="button" href="https://cartografias177.github.io/Riopiedrasmap/" target="_blank">Río Piedras</a>
