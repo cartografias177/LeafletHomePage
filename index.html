@@ -1,164 +1,179 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido a Nuestro Mapa Interactivo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Condensed&display=swap" rel="stylesheet">
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: 'Helvetica Condensed', sans-serif;
-        }
-        .video-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        .video-bg video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .container {
-            text-align: center;
-            width: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-            position: relative;
-            z-index: 1;
-        }
-        .highlight-box {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 15px;
-            border-radius: 10px;
-            display: inline-block;
-            max-width: 400px;
-            margin: 20px auto;
-            position: relative;
-            z-index: 2;
-        }
-        .highlight-box p {
-            font-size: 14px;
-        }
-        .logo {
-            display: block;
-            margin: 0 auto 20px auto;
-            max-width: 250px;
-            z-index: 3;
-            position: relative;
-        }
-        .animated-button {
-            background-color: #ff69b4;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            display: inline-block;
-            text-align: center;
-            text-decoration: none;
-            margin-bottom: 20px;
-        }
-        .animated-button:hover {
-            background-color: #ff1493;
-            transform: scale(1.1);
-        }
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .button {
-            position: relative;
-            width: auto;
-            max-width: 200px;
-            height: 50px;
-            background: rgba(144, 238, 144, 0.95);
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-            border-radius: 20px;
-            color: #000;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            font-family: 'Helvetica Condensed', sans-serif;
-            transition: background 0.3s ease;
-            text-align: center;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .button:hover {
-            background: rgba(144, 238, 144, 1);
-        }
-        .tooltip {
-            visibility: hidden;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            border-radius: 5px;
-            position: absolute;
-            z-index: 10;
-            bottom: 60px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 250px;
-            font-size: 14px;
-        }
-        .button:hover .tooltip {
-            visibility: visible;
-        }
-        .footer-highlight {
-            background-color: rgba(255, 255, 255, 0.8);
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bienvenido a Nuestro Mapa Interactivo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Helvetica+Condensed&display=swap" rel="stylesheet"/>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Helvetica Condensed', sans-serif;
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .video-bg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .container {
+      text-align: center;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 1;
+    }
+
+    .highlight-box {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 15px;
+      border-radius: 10px;
+      display: inline-block;
+      max-width: 400px;
+      margin: 20px auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .highlight-box p {
+      font-size: 14px;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 20px auto; /* ¡Cambio aquí! */
+      max-width: 250px;
+      z-index: 3;
+      position: relative;
+    }
+
+    .animated-button {
+      background-color: #ff69b4;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+
+    .animated-button:hover {
+      background-color: #ff1493;
+      transform: scale(1.1);
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .button {
+      position: relative;
+      width: auto;
+      max-width: 200px;
+      height: 50px;
+      background: rgba(144, 238, 144, 0.95);
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: 'Helvetica Condensed', sans-serif;
+      transition: background 0.3s ease;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button:hover {
+      background: rgba(144, 238, 144, 1);
+    }
+
+    .tooltip {
+      visibility: hidden;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+      position: absolute;
+      z-index: 10;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 250px;
+      font-size: 14px;
+    }
+
+    .button:hover .tooltip {
+      visibility: visible;
+    }
+
+    .footer-highlight {
+      background-color: rgba(255, 255, 255, 0.8);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
-    <div class="video-bg">
-        <video id="background-video" autoplay muted loop>
-            <source src="VideoCaguasRioPiedras.mp4" type="video/mp4">
-            Tu navegador no soporta el elemento de video.
-        </video>
+  <div class="video-bg">
+    <video id="background-video" autoplay muted loop>
+      <source src="VideoCaguasRioPiedras.mp4" type="video/mp4"/>
+      Tu navegador no soporta el elemento de video.
+    </video>
+  </div>
+
+  <div class="container">
+    <div class="map-invitation-container">
+      <img src="Logo_Nuestro_Paseo.svg" alt="Logo Nuestro Paseo" class="logo"/>
+      <a class="animated-button" href="#">Explora los mapas interactivos y conoce más sobre Caguas y Río Piedras</a>
+      <div class="highlight-box">
+        <p>Los paseos en los cascos urbanos fomentan la economía local, revitalizan el espacio público y crean sentido de comunidad. Nuestro Paseo es una invitación a redescubrir el paseo comercial boricua.</p>
+      </div>
     </div>
 
-    <div class="container">
-        <div class="map-invitation-container">
-            <img src="Logo_Nuestro_Paseo.svg" alt="Logo Nuestro Paseo" class="logo">
-            <a class="animated-button" href="#">Explora los mapas interactivos y conoce más sobre Caguas y Río Piedras</a>
-            <div class="highlight-box">
-                <p>Los paseos en los cascos urbanos fomentan la economía local, revitalizan el espacio público y crean sentido de comunidad. Nuestro Paseo es una invitación a redescubrir el paseo comercial boricua.</p>
-            </div>
-        </div>
-        <div class="button-container">
-            <a class="button" href="https://cartografias177.github.io/Caguasmap/" target="_blank">Caguas</a>
-            <a class="button" href="https://cartografias177.github.io/Riopiedrasmap/" target="_blank">Río Piedras</a>
-            <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScJGsjiBNLiHaDAZN8tPod1N3jGFa9T3VE9x5GEOomiO7ooyQ/viewform?usp=pp_url" target="_blank">
-                Quiero ser parte de Nuestro Paseo
-                <span class="tooltip">¿Eres un negocio, organización o iniciativa que promueve el desarrollo sostenible comunitario en Caguas o Río Piedras? Compártenos tu info aquí para que seas parte de esta iniciativa.</span>
-            </a>
-        </div>
+    <div class="button-container">
+      <a class="button" href="https://cartografias177.github.io/Caguasmap/" target="_blank">Caguas</a>
+      <a class="button" href="https://cartografias177.github.io/Riopiedrasmap/" target="_blank">Río Piedras</a>
+      <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScJGsjiBNLiHaDAZN8tPod1N3jGFa9T3VE9x5GEOomiO7ooyQ/viewform?usp=pp_url" target="_blank">
+        Quiero ser parte de Nuestro Paseo
+        <span class="tooltip">¿Eres un negocio, organización o iniciativa que promueve el desarrollo sostenible comunitario en Caguas o Río Piedras? Compártenos tu info aquí para que seas parte de esta iniciativa.</span>
+      </a>
     </div>
-    
-    <footer style="position: absolute; bottom: 20px; width: 100%; text-align: center; font-size: 14px;">
-        <div class="footer-highlight">
-            <p style="margin: 0;">Para más información, escríbenos a <a href="mailto:cartografias@lamarana.org">cartografias@lamarana.org</a>.</p>
-        </div>
-    </footer>
+  </div>
+
+  <footer style="position: absolute; bottom: 20px; width: 100%; text-align: center; font-size: 14px;">
+    <div class="footer-highlight">
+      <p style="margin: 0;">Para más información, escríbenos a <a href="mailto:cartografias@lamarana.org">cartografias@lamarana.org</a>.</p>
+    </div>
+  </footer>
 </body>
 </html>
