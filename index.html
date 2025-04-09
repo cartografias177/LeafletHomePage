@@ -38,11 +38,11 @@
 
     .highlight-box {
       background-color: rgba(255, 255, 255, 0.8);
-      padding: 45px 15px 15px 15px; /* más espacio arriba para el botón */
+      padding: 20px 15px;
       border-radius: 10px;
       display: inline-block;
       max-width: 400px;
-      margin: 40px auto 20px auto;
+      margin: 20px auto;
       position: relative;
       z-index: 2;
     }
@@ -54,7 +54,7 @@
 
     .logo {
       display: block;
-      margin: 0 auto 20px auto;
+      margin: 0 auto 40px auto; /* más espacio entre logo y contenido */
       max-width: 250px;
       z-index: 3;
       position: relative;
@@ -72,25 +72,14 @@
       transition: transform 0.3s ease, background-color 0.3s ease;
       text-align: center;
       text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     .animated-button:hover {
       background-color: #ff1493;
       transform: scale(1.1);
-    }
-
-    .overlay-container {
-      position: relative;
-      display: inline-block;
-    }
-
-    .overlay-button {
-      position: absolute;
-      top: -45px; /* separa el botón de la caja blanca */
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 3;
     }
 
     .button-container {
@@ -168,13 +157,14 @@
     <div class="map-invitation-container">
       <img src="Logo_Nuestro_Paseo.svg" alt="Logo Nuestro Paseo" class="logo"/>
 
-      <div class="overlay-container">
-        <a class="animated-button overlay-button" href="#">
-          Explora los mapas interactivos y conoce más sobre Caguas y Río Piedras
-        </a>
-        <div class="highlight-box">
-          <p>Los paseos en los cascos urbanos fomentan la economía local, revitalizan el espacio público y crean sentido de comunidad. Nuestro Paseo es una invitación a redescubrir el paseo comercial boricua.</p>
-        </div>
+      <!-- Botón rosado (estático) -->
+      <a class="animated-button" href="#">
+        Explora los mapas interactivos y conoce más sobre Caguas y Río Piedras
+      </a>
+
+      <!-- Caja blanca -->
+      <div class="highlight-box">
+        <p>Los paseos en los cascos urbanos fomentan la economía local, revitalizan el espacio público y crean sentido de comunidad. Nuestro Paseo es una invitación a redescubrir el paseo comercial boricua.</p>
       </div>
     </div>
 
