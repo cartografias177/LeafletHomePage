@@ -69,12 +69,13 @@
       position: relative;
     }
 
-    .button-container {
+    .button-container,
+    .form-button-container {
       display: flex;
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     .button {
@@ -102,12 +103,12 @@
 
     .button i {
       font-size: 18px;
-      color: #995C70; /* base rosado oscuro */
+      color: #995C70;
       transition: color 0.3s ease;
     }
 
     .button:hover i {
-      color: #F198C0; /* rosado brillante al pasar el mouse */
+      color: #F198C0;
     }
 
     .button-map {
@@ -168,15 +169,13 @@
   </div>
 
   <div class="container">
-    <div class="map-invitation-container">
-      <img src="Logo_Nuestro_Paseo.svg" alt="Logo Nuestro Paseo" class="logo"/>
+    <img src="Logo_Nuestro_Paseo.svg" alt="Logo Nuestro Paseo" class="logo"/>
 
-      <div class="highlight-box">
-        <div class="intro-text">Explora los mapas interactivos y conoce más sobre Caguas y Río Piedras</div>
-        <p>Los paseos en los cascos urbanos fomentan la economía local, revitalizan el espacio público y crean sentido de comunidad. Nuestro Paseo es una invitación a redescubrir el paseo comercial boricua.</p>
-      </div>
+    <div class="highlight-box">
+      <div class="intro-text">Explora los mapas interactivos y conoce más sobre Caguas y Río Piedras</div>
     </div>
 
+    <!-- Botones de mapas justo debajo del texto de invitación -->
     <div class="button-container">
       <a class="button button-map" href="https://cartografias177.github.io/Caguasmap/" target="_blank">
         <i class="fas fa-map-marked-alt"></i> Caguas
@@ -184,6 +183,15 @@
       <a class="button button-map" href="https://cartografias177.github.io/Riopiedrasmap/" target="_blank">
         <i class="fas fa-map-marked-alt"></i> Río Piedras
       </a>
+    </div>
+
+    <!-- Caja blanca con descripción -->
+    <div class="highlight-box">
+      <p>Los paseos en los cascos urbanos fomentan la economía local, revitalizan el espacio público y crean sentido de comunidad. Nuestro Paseo es una invitación a redescubrir el paseo comercial boricua.</p>
+    </div>
+
+    <!-- Botón de formulario justo debajo de la caja -->
+    <div class="form-button-container">
       <a class="button button-form" href="https://docs.google.com/forms/d/e/1FAIpQLScJGsjiBNLiHaDAZN8tPod1N3jGFa9T3VE9x5GEOomiO7ooyQ/viewform?usp=pp_url" target="_blank">
         <i class="fas fa-clipboard-list"></i> Quiero ser parte de Nuestro Paseo
         <span class="tooltip">¿Eres un negocio, organización o iniciativa que promueve el desarrollo sostenible comunitario en Caguas o Río Piedras? Compártenos tu info aquí para que seas parte de esta iniciativa.</span>
